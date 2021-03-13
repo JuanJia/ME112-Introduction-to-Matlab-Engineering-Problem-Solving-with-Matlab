@@ -1,0 +1,50 @@
+%% JIA Jiyuan 20210303 ICE#4 Class 01
+clear;clc;
+
+%% Problem 1:
+clear;clc;
+X = [0 0.25 0.75 1.25 1.5 1.75 1.875 2 2.125 2.25];
+Y = [1.2 1.18 1.1 1 0.92 0.8 0.7 0.55 0.35 0];
+plot(X,Y,'o');
+hold on
+xlabel('X(ft)');
+ylabel('Y');
+plotvals=0:0.1:3;
+yvals=interp1(X,Y,plotvals,'linear');
+plot(plotvals,yvals,'LineWidth',4);
+hold on
+yvals=interp1(X,Y,plotvals,'spline');
+plot(plotvals,yvals,'LineWidth',2);
+hold on
+
+%% Problem 2:
+clear;clc;
+T = 0:8:40;
+o = [14.621 11.843 9.870 8.418 7.305 6.413];
+plot(T,o,'o','MarkerSize',10);
+xlabel('T(^oC)');
+ylabel('mg/L');
+hold on
+plotvals=0:0.1:40;
+yvals=interp1(T,o,plotvals,'linear');
+plot(plotvals,yvals,'LineWidth',4);
+hold on
+yvals=interp1(T,o,plotvals,'spline');
+plot(plotvals,yvals,'LineWidth',2);
+hold on
+
+%% Problem 3
+clear;clc;
+f = @(t) (sin(t)).^2;
+t = 0:pi/4:2*pi;
+plot(t,f(t),'o','MarkerSize',10);
+xlabel('t)');
+ylabel('f(t)');
+hold on
+plotvals=0:0.1:2*pi;
+yvals=interp1(t,f(t),plotvals,'4');
+plot(plotvals,yvals,'LineWidth',4);
+hold on
+yvals=interp1(t,f(t),plotvals,'spline');
+plot(plotvals,yvals,'LineWidth',2);
+hold on
