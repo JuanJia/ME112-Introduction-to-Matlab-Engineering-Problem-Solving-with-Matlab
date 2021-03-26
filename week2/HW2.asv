@@ -80,7 +80,7 @@ cost = 6*30*1.414*7;
 %initial location of distribution center
 locationDistribution = [0 0];
 %check every possible poitnt
-mesh = zeros(30,30);
+mesh = zeors(30,30);
 for li = 0:1:30
     for lj = 0:1:30
         %sum of cost of every point
@@ -95,11 +95,11 @@ for li = 0:1:30
             %cost accumulated
             costTemp = costTemp + c;
         end
-   
+        mesh
         %find the minimum cost and center's location
         if costTemp < cost
             cost = costTemp;
-            locationDistribution = [li lj];
+            locationDistribution = [infoCustomer(lk,1) infoCustomer(lk,2)];
         end
     end
 end
